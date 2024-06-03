@@ -5,8 +5,7 @@ import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-// import Footer from './Footer'
-// import PlaidLink from './PlaidLink'
+import Footer from './Footer'
 
 const Sidebar = ({ user }: SiderbarProps) => {
   const pathname = usePathname();
@@ -49,92 +48,12 @@ const Sidebar = ({ user }: SiderbarProps) => {
           )
         })}
         
-        {/* <PlaidLink user={user} /> */}
+        USER
       </nav>
 
-      {/* <footer user={user} /> */}
+      <Footer user={user} />
     </section>
   )
 }
 
 export default Sidebar
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import { sidebarLinks } from "@/constants"
-// import Image from "next/image"
-// import Link from "next/link"
-
-// const SideBar = ({ user }): SiderbarProps => {
-//   return (
-//     <section className='sidebar'>
-//         <nav className='flex flex-col gap-4'>
-//             <Link href='/' className='mb-12 cursor-pointer items-center gap-2'>
-//                 <Image 
-//                     src="/icons/logo.svg"
-//                     width={34}
-//                     height={34}
-//                     alt="Horizon Logo"
-//                     className="size-[24px] max-xl:size-14"
-
-                
-//                 />
-//                 <h1 className="sidebar-logo">Money_Hub</h1>
-            
-//             </Link>
-
-//             {sidebarLinks.map((item) 
-//             => {
-//                 return (
-//                     <Link href={item.route} key={item.label}>
-//                         {item.label}
-//                     </Link>
-//                 )
-
-//             })}
-
-//         </nav>
-//     </section>
-//   )
-// }
-
-// export default SideBar
