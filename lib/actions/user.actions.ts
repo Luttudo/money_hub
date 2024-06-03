@@ -34,7 +34,7 @@ export const signUp = async (userData: SignUpParams) => {
             );
         const session = await account.createEmailPasswordSession(email, password);
     
-        cookies().set("my-custom-session", session.secret, {
+        cookies().set("appwrite-session", session.secret, {
         path: "/",
         httpOnly: true,
         sameSite: "strict",
@@ -67,7 +67,7 @@ export const logoutAccount = async () => {
 try {
     const { account } = await createSessionClient();
 
-    cookies().delete("my-custom-session");
+    cookies().delete("appwrite-session");
 
     await account.deleteSession('current');
 } catch (error) {
