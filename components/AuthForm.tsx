@@ -23,6 +23,7 @@ import { authFormSchema } from '@/lib/utils';
 import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { getLoggedInUser, signIn, signUp } from '@/lib/actions/user.actions';
+import PlaidLink from './PlaidLink';
 
 
 const FormSchema = z.object({
@@ -125,7 +126,7 @@ const AuthForm = ({ type }: {type: string}) => {
         </header>   
         {user ? (
             <div className='flex flex-col gap-4'>
-                {/* Plaid Link */}
+                <PlaidLink user={user} variant="primary" />
             </div> 
 
         ): (
@@ -191,14 +192,3 @@ const AuthForm = ({ type }: {type: string}) => {
 }
 
 export default AuthForm
-
-{/* <FormItem>
-<FormLabel>Username</FormLabel>
-<FormControl>
-    <Input placeholder="shadcn" {...field} />
-</FormControl>
-<FormDescription>
-    This is your public display name.
-</FormDescription>
-<FormMessage />
-</FormItem> */}
