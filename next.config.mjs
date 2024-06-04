@@ -8,3 +8,5 @@ const nextConfig = {
     ignoreDuringBuilds: true
   }
 };
+
+//teste
